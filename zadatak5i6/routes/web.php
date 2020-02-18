@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', 'IpAddresController@index')->name('welcome');
+Route::post('/', 'IpAddresController@getIpInfo')->name('getIp');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
