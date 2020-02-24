@@ -19,7 +19,7 @@ class IpAddresController extends Controller
     {
         $ip = Request::ip();
         $object = $this->getIpInfo($ip);
-        return view('welcome')->with('object', $object);
+        return view('welcome')->with('object',$object);
     }
 
     /**
@@ -40,8 +40,26 @@ class IpAddresController extends Controller
         }
         $object = json_decode($response->getBody()->getContents(), true);
         $statistic = new Statistic($object);
-        if (Statistic::where('ip',$statistic->ip)->first()===null)
+        if (Statistic::where('ip',$statistic->ip)->first() === null)
         $statistic->save($object);
         return $statistic;
+    }
+
+    public function showDataGrid(){
+        include(app_path("Classes/phpgrid/jqgrid_dist.php"));
+        $db_conf = array(
+            "type"  => "mysqli",
+            "server" => env("DB_HOST"),
+            "user" => env("DB_USERNAME"),
+            "password" => env("DB_PASSWORD"),
+            "database" => env("DB_DATABASE")
+        );
+
+        $grid = new \jqgrid($db_conf);
+        $opt["caption"] = "Grid";
+        $grid->set_options($opt);
+        $grid->table="statistics";
+        $opt = $grid->render("list1");
+        return view('home')->with('showDatas',$opt);
     }
 }

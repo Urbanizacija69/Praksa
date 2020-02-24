@@ -4,20 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <title>Zadatak 4. i 5.</title>
 
         <!-- Bootstrap -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     </head>
     <body>
-                <div class="container ">
-                    <div class="row justify-content-center form alert-primary mt-5 text-danger">
-                        <h1 class="col-12 text-center">IpAddress:</h1>
+
+                <div class="container">
+                    <div class="row justify-content-center alert-primary mt-5 text-danger ">
+                        <h1 class="col-12 text-center">IpAddress:</h1><br>
                     @if(property_exists($object,'error'))
                         {{ $object["error"] }}
                     @else
@@ -33,7 +30,7 @@
                         org: {{ $object->org }}<br>
                         asn: {{ $object->asn }}<br>
                         subdivision: {{ $object->subdivision }}<br>
-                        subdivision2: {{ $object->subdivision2 }}<br>
+                        subdivision2: {{ $object->subdivision2 }}<br><br>
                     @endif
                     </div>
                 </div>

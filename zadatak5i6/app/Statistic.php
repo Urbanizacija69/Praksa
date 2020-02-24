@@ -29,4 +29,5 @@ class Statistic extends Model
         'subdivision',
         'subdivision2'
     ];
+
 }

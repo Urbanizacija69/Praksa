@@ -17,8 +17,6 @@
 
 Route::get('/', 'IpAddresController@index')->name('welcome');
 Route::post('/', 'IpAddresController@getIpInfo')->name('getIp');
+Route::get('/home', 'IpAddresController@showDataGrid')->name('home');
+Route::post('/home', 'IpAddresController@showDataGrid')->name('home');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
