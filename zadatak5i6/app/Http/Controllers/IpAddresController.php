@@ -45,6 +45,10 @@ class IpAddresController extends Controller
         return $statistic;
     }
 
+    /**
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showDataGrid(){
         include(app_path("Classes/phpgrid/jqgrid_dist.php"));
         $db_conf = array(
