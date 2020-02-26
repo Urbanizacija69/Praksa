@@ -10,7 +10,7 @@
             </thead>
             <tbody>
             <tr>
-                <td>{{$salary}}</td>
+                <td>{{$salary}}$</td>
             </tr>
             </tbody>
         </table>

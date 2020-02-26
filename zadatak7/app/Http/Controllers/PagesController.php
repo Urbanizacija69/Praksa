@@ -16,7 +16,6 @@ class PagesController extends Controller
     }
     public function showJobs()
     {
-
         $jobs = Job::withCount('workers')->orderBy('workers_count', 'desc')->get();
         return view("show_jobs")->with('jobs',$jobs);
     }
