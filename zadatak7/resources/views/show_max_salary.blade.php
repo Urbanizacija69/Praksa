@@ -12,10 +12,12 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($workers as $worker)
                     <tr>
-                        <td>{{$workers->firstname}} {{$workers->lastname }}</td>
-                        <td>{{$workers->salary}}$</td>
+                        <td>{{$worker->firstname}} {{$worker->lastname }}</td>
+                        <td>{{$worker->salary}}$</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

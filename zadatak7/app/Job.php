@@ -16,7 +16,7 @@ class Job extends Model
      */
     public function workers()
     {
-        return $this->hasMany('App\Worker', 'id_worker');
+        return $this->hasMany('App\Worker', 'id_job');
     }
 
 

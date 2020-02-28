@@ -10,7 +10,7 @@
             </thead>
             <tbody>
             <tr>
-                <td>{{$salary}}$</td>
+                <td>Average salary for {{$number}} workers is {{$salary}}$</td>
             </tr>
             </tbody>
         </table>

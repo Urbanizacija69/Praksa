@@ -21,18 +21,19 @@ class PagesController extends Controller
     }
     public function showMaxSalary()
     {
-        $workers = Worker::orderBy('salary','desc')->first();
+        $workers = Worker::orderBy('salary','desc')->take(2)->skip(1)->get();
         return view('show_max_salary')->with('workers', $workers);
     }
     public function showMinSalary()
     {
-        $workers =Worker::orderBy('salary','asc')->first();
+        $workers = Worker::orderBy('salary','asc')->first();
         return view('show_min_salary')->with('workers', $workers);
     }
     public function showAvgSalary()
     {
-        $salary=Worker::avg('salary');
-        return view('show_avg_salary')->with('salary', $salary);
+        $salary = Worker::avg('salary');
+        $number = Worker::count();
+        return view('show_avg_salary')->with(['salary', $salary = $number]);
     }
 
 }

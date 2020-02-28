@@ -7,7 +7,7 @@
                 <thead>
                 <tr>
                     <th scope="col">Name of Worker</th>
-                    <th scope="col">Workers largest salary</th>
+                    <th scope="col">Workers smallest salary</th>
 
                 </tr>
                 </thead>

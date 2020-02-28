@@ -15,7 +15,7 @@
                 @foreach($jobs as $job)
                     <tr>
                         <td>{{ $job->name }}</td>
-                        <td>{{ $job->workers->count() }}</td>
+                        <td>{{ $job->workers_count}}</td>
                     </tr>
                 @endforeach
                 </tbody>
