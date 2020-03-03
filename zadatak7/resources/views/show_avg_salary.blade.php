@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <table class="table" style="width: 150px">
+        <table class="table" style="width: 400px">
             <thead>
             <tr>
                 <th scope="col">Average Salary</th>

@@ -33,7 +33,7 @@ class PagesController extends Controller
     {
         $salary = Worker::avg('salary');
         $number = Worker::count();
-        return view('show_avg_salary')->with(['salary', $salary = $number]);
+        return view('show_avg_salary')->with(['salary'=> $salary,'number' => $number]);
     }
 
 }
