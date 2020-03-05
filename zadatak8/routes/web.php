@@ -26,3 +26,4 @@ Route::post('/getcompany','GetCompanyController@postCompanyData')->name('getcomp
 
 /* AccountEntryController */
 Route::get('/account','AccountEntryController@index')->name('account');
+Route::get('/account','AccountEntryController@index')->name('account');

@@ -23,8 +23,13 @@ class AddWorkerController extends Controller
             'salary' => 'required|gt:0|numeric',
             'birthday' => 'required|date',
             'id_job' => 'required|exists:jobs,id_job',
-            'color' => 'required|size:7'
+            'color' => 'required|size:7|starts_with:#'
         ]);
+        $color=hexdec($request->color);
+        if ($color<0 || $color>255){
+            abort(403, 'Nedozvoljena radnja!');
+        }
+
 
         $worker = new Worker($request->all());
         $worker->save();

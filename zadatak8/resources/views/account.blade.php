@@ -2,6 +2,7 @@
 @section("content")
 <div class="container">
     <div class="table-responsive">
+        <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
         <form method="post" id="dynamic_form">
             <span id="result"></span>
             <table class="table table-bordered table-striped" id="user_table">
